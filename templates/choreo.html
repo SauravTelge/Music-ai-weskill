@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeSkill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container-fluid" style="background-image: linear-gradient(180deg,#c3c0ea,hsla(0,0%,90.2%,0)); height: 80px;">
+        <h1 style="display: flex; justify-content: center;padding-top: 10px;">WeSkill AI dance compare studio✨🕺🏻💃🏻</h1>
+      </div>
+      <div class="container">
+          <h2>Welcome to the Choreographer's video upload page!</h2>
+          <h2>You can upload your video here:</h2>
+          <label for="video_p">Select video file to compare:</label>
+          <br><small id="emailHelp" class="form-text text-muted">Please keep your filename the same as the song's name.</small>
+            <input type="file" id="video_p" name="file" class="form-control-file"  accept="video/*" onchange="getFilename()">
+
+            <input class="mdl-button mdl-button--raised mdl-button--colored" type="button" value="Upload"
+        onclick="generateSignedURL()">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file" id="status"></div>
+          <form action="/choreographer_upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+            <label for="name">Enter description for the<b>song</b>:</label>
+            <input type="text" name="name" class="form-control" placeholder="Upto 150 characters">
+<br>
+            <select name="genre" class="form-select" aria-label="Default select example">
+              <option selected>Select Genre</option>
+              <option value="bollywood">Bollywood</option>
+              <option value="kids">Kids</option>
+              <option value="classical">Classical</option>
+            </select>
+            <br>
+            <br>
+            <!-- <label for="text">Enter name of the <b>song</b>: </label>
+            <br>
+            <input type="text" name="name" class="form-control" placeholder="Song name"> -->
+            <select name="pose" class="form-select" aria-label="Default select example">
+              <option selected>Select pose type</option>
+              <option value="upperbody">Upper Body</option>
+              <option value="lowerbody">Lower Body</option>
+              <option value="fullbody">Full Body</option>
+            </select>
+
+            <br>
+            <br>
+            
+
+        <button  class="btn btn-success btn-block" type="submit" style="min-width: 100%; margin-top: 5%;margin-bottom: 2%"><b>SUBMIT</b></button></div>
+        <input id="filename" type="text" name="filename" style="display: none;" />
+      </form>
+          </div>
+      </div>
+      <script>
+  
+  var c = "";
+      var filename = "";
+  
+      function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+        });
+      }
+  
+      function getFilename() {
+        var fullPath = document.getElementById('video_p').value;
+        if (fullPath) {
+          var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+          filename = fullPath.substring(startIndex);
+          if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+          }
+          document.getElementById("filename").value = filename;
+          console.log(filename);
+          return (filename);
+        }
+        return (null);
+      }
+  
+      function upload() {
+        var file = $('#video_p')[0].files[0];
+        uploadFile(file)
+      }
+  
+  
+      async function generateSignedURL() {
+        file = getFilename();
+        action = "PUT";
+        const response = await fetch('/getSignedURL?filename=' + file + "&action=" + action)
+        if (!response.ok) {
+          throw new Error('Network response for fetch was not ok.');
+        }
+        c = await response.text();
+        c = c.replace(/\"/g, "")
+        console.log("Got signedURL: " + c)
+        console.log("Trying to upload " + file)
+        upload();
+        console.log("Complete")
+        return false;
+      }
+  
+      function uploadFile(file) {
+        $("#status").html('Starting Upload...')
+        url = c
+        fetch(url, {
+          method: 'PUT',
+          body: file
+        })
+          .then(response => response.text())
+          .catch(error => $("#status").html(error)
+          )
+          .then(response => $("#status").html('File uploaded successfully: ' + filename));
+      }
+  
+      </script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
+</html>
