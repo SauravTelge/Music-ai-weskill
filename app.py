@@ -178,25 +178,25 @@ print("distance",c2)
 c3=percentage_score(c2)
 print("Score",c3)
 
-s1,s2=my_list, mynewlist
+# s1,s2=my_list, mynewlist
 
-path = dtw.warping_path(s1, s2, window=2)
+# path = dtw.warping_path(s1, s2, window=2)
 # print(path)
-dtwvis.plot_warping(s1, s2, path, filename=r"plots\warp.png")
+# dtwvis.plot_warping(s1, s2, path, filename=r"plots\warp.png")
 
 
 
-import moviepy.editor as mp
+# import moviepy.editor as mp
 
-audio1 = mp.AudioFileClip(path1)
-video1 = mp.VideoFileClip(r'output_animation\animation_1.mp4')    #     if you have run the jupyter notebook for animation chane the path
-final = video1.set_audio(audio1)                                  #     to animation_2.mp4
-final.write_videofile(r"output_animation\tutor_voiced_ani.mp4")
+# audio1 = mp.AudioFileClip(path1)
+# video1 = mp.VideoFileClip(r'output_animation\animation_1.mp4')    #     if you have run the jupyter notebook for animation chane the path
+# final = video1.set_audio(audio1)                                  #     to animation_2.mp4
+# final.write_videofile(r"output_animation\tutor_voiced_ani.mp4")
 
-audio2 = mp.AudioFileClip(path2)
-video2 = mp.VideoFileClip(r'output_animation\animation_1.mp4')
-final2 = video2.set_audio(audio2)
-final2.write_videofile(r"output_animation\user_voiced_ani.mp4")
+# audio2 = mp.AudioFileClip(path2)
+# video2 = mp.VideoFileClip(r'output_animation\animation_1.mp4')
+# final2 = video2.set_audio(audio2)
+# final2.write_videofile(r"output_animation\user_voiced_ani.mp4")
 
 
 
