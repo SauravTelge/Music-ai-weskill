@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "weskill-dance-ai-323207",
+  "private_key_id": "77d84dbf2c04c1f5472240999778744c431dfb27",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCk23dPfXyglOFl\nimON9sGVBKa4p0eShC1+UNWpCD5/57/SOXjExxJmF2srAJ5mm44eeReP/ksCchu2\nPfTJl9omPbFDovE+aJ2Unrpp/CdFicne6BEC+aFdwpM8B2wvyzuldSTVZ6ecLGYB\nqsJYPMcmU9TSgoJG9ML8/raNMcLHahRYZjGhHGznTUSi2iKmel028fU8tIoDRJq1\nWcCaI7qE5oYpi9I2yQ5ytgKcG73c8rMQQwIapfh27v3tyR/WjUPH9qDTXnX9vMoj\nbJZKiBUUFm1LtdkXlReytN+WtDkASS+TNIIrmPPn7eEfdKWIgcMB7t/NgzWQsHuC\nyGbL1TP/AgMBAAECggEAMuHH7+Ffy2JYNRJjCsiL1BYk7R44QXkJX5DMeUjhnXGm\na1iwtS9qNtdojNO6kBnX4gDm7FsExML6WaPCv0vemWn2IdWTVvtME7hv+dFJP7W4\n+FMxGPV6QCmTbvYthozYIofG8BT3jwTHESGmrTxJDUPXjoeYdRULb7GgH3Ep2Ike\nkLpvcQAqeMnmRrDgycBDe4BYfdD28oA4XGr5CtlV5uZfsWCcWudqvSIQiAsuMyGe\n1199W7YF/7QVGQMvJS8agHhBZuQX6pXA5VTHfTVJ7yRK5Pbu+g5xQK7ADISE/V+G\nLTof5D4DqQVmLlB0rnw5N225Pa6Q0Me3TKKW1O0XEQKBgQDcaOswU3RWtiLvevTs\nv5DU+ega8j78vdNo6NYTbBGXS6Z4L7eusS1JR/g5fwm/pTOgOKPc5dH/ZhfwBuqP\na9KJUzUzbmCcPdQ2vDTC+Cw8hJKLqUc25T+C89FHd4D3hZiTNzBU3F6aMdDGemhr\nu7gmAc11K3ks0I+pDFekduXvDwKBgQC/eivybu2OV7x71n8AK04H4+Q7k2WAKpcb\ngOco5ryUYNdUvsptuvtcA327N0JfvcHR/8gKV2Sl0vuOjJv6jVcscRahH8t2h8bd\n3sik+1azD8f+55ffv9esw+aaepUPwUqaPIL58Lhci78xl/9mIONcBCMNqBW8Fqg6\nYh3EfupsEQKBgD0MMlgoRUjfGb4K6FvKk2rp7QfJoPiP+0ZLdz/Z5uVo5qrTTKTu\nHgT2EiKatTCHqUzvYzOD1C5RMMAiqkUfMCkpCss7/zZHScf/SP3XjykT7yMPt9HU\nnUrADW8mAmqMbj4YQyK+BtXehlzy+okcbVzZkvapG971xVSlPoEnDXixAoGBALCo\nlj1RbOlEN0kGKBxO1+pdrqfsoNvz74BXmG5bG6fGBUVR1dARkHFfYzREkn9kwpru\nY3BvGxQHKUJmpk4u8zu0hs1XWU/di3QOZI4aue3w5HNg1vV/uQvTnkHuUPK9Qgg1\nRh41otL3uAmYk/F07G9r/a9O4ear/MAI4C/3bG8RAoGAOzhoT9uzVUJ2WLyGMzF6\nYmRl4PMk+pd5KTzpwClc0DMQT1u40QbbD3memOOuTnrddk1TFOfV43CdpyB+Qczs\nFRwXJAyPUxM5abNOYzUV2Nuj25NSu7pzE8AuGiAidMke+26Lq3sJccCUKcmxeoK8\no93GDHl9M7wDimk9InsjwaI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ws-dance-ai-web@weskill-dance-ai-323207.iam.gserviceaccount.com",
+  "client_id": "100291896033927937893",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ws-dance-ai-web%40weskill-dance-ai-323207.iam.gserviceaccount.com"
+}
