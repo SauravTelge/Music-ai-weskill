@@ -104,8 +104,8 @@ def output():
         bucket = storage_client.bucket(bucket_name)
     # Upload file to Google Bucket
         blob = bucket.blob(f'{fl}') 
-        blob.download_to_filename(f'/tmp/{fl}')
-        sr2, audio2 = wavfile.read(f"/tmp/{fl}")
+        blob.download_to_filename(f'./static/{fl}')
+        sr2, audio2 = wavfile.read(f"./static/{fl}")
         time2, frequency2, confidence2, activation2 = crepe.predict(audio2, sr2, viterbi=True)
         data_2_time = asarray(time2)
         # save to csv file
@@ -123,7 +123,7 @@ def output():
     # fl=dir.rsplit('.', 1)[0]
     # print(fl) 
     
-    return render_template("output.html")
+    return render_template("output.html",data_2_time=data_2_time,data_2_freq=data_2_freq )
 
 
 if __name__ == "__main__":
